@@ -1,0 +1,57 @@
+include html/Header.html
+html
+    head
+        meta(charset='UTF-8')
+        script.
+            $(document).ready(function () {
+                let errors = {noUserID: "!{noUserID}", passNoMatch: "!{passNoMatch}"};
+                console.log(errors);
+                for (let error in errors) {
+                    let cErr = errors[error];
+                    //console.log("Nice: " + cErr)
+                    if (cErr) {
+                        let mymodal = $('#myModal');
+                        mymodal.find('.modal-title').text("Error");
+                        mymodal.find('.modal-body').text(cErr);
+                        $('#myModal').modal('show');
+                    }
+                    $("#ModalClose").click(function () {
+                        $('#myModal').modal('hide')
+                    });
+                }
+            });
+        body
+            div(class="container")
+                div(class="title") Forgot Password
+                    p
+                div(class="mid")
+                    form(action='/changePass' method='post')
+                        label( class="form-label") ID Number
+                        input(type="text" name='usernameReg' class="form-control form-control-sm" id='usernameReg' required='')
+                        br
+                        label( class="form-label") Create a New Password
+                        input(type="password" name='passwordReg' class="form-control form-control-sm" id="passwordReg" required='')
+                        br
+                        label( class="form-label") Confirm Password
+                            input(type="password" name='passwordConfirmReg' class="form-control form-control-sm" id="passwordConfirmReg" required='')
+                        br
+                        br
+                        p
+                        br
+                        div(class="homeBtn")
+                            button.btn.btn-outline-dark(type='submit' value='changePassword') Change Password
+                        br
+                        div(class="homeBtn")
+                            button.btn.btn-outline-dark(type="button"  onclick="location.href='/home'" value="back") Cancel
+                        br
+                        br
+
+            .modal.fade(id="myModal" tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                .modal-dialog.modal-dialog-centered(role='document')
+                    .modal-content
+                        .modal-header
+                            h5#exampleModalLongTitle.modal-title Modal title
+                        .modal-body
+                            | !{loginError}
+                        .modal-footer
+                            button.btn.btn-secondary(id="ModalClose" type='button' data-dismiss='modal') Ok

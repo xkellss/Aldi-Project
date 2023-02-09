@@ -1,0 +1,91 @@
+include html/Header2.html
+html
+    head
+        meta(charset='UTF-8')
+        script.
+            let local_data = !{JSON.stringify(data)}
+
+            $(document).ready(function () {
+                $('.deny').click(function () {
+                    $("#exampleModalLongTitle").text("Deny Request");
+
+                    let rowIndex = ($(this).parent().parent().index()) / 5;
+
+                    $("#prevCommentsLabel").text("");
+                    $("#prevComments").text("");
+                    $('#formId').attr('action', 'page2');
+                    $('#myModal').modal('show')
+                });
+                $('.reqInfo').click(function () {
+                    $("#exampleModalLongTitle").text("Request More Info");
+
+                    let rowIndex = ($(this).parent().parent().index()) / 5;
+                    //let tableBody = cell.parent();
+                    //let cellIndex = cell.index(cell);
+                    console.log(rowIndex)
+                    console.log(local_data)
+                    $("#prevComments").text(local_data[rowIndex].Comments);
+                    $('#formId').attr('action', 'page2');
+                    $('#myModal').modal('show')
+                });
+                $('.accept').click(function () {
+                    $("#exampleModalLongTitle").text("Accept Request");
+
+                    let rowIndex = ($(this).parent().parent().index()) / 5;
+
+                    $("#prevCommentsLabel").text("");
+                    $("#prevComments").text("");
+                    $('#formId').attr('action', 'page2');
+                    $('#myModal').modal('show')
+                });
+
+                $('#ModalClose').click(function () {
+                    $('#myModal').modal('hide')
+                });
+            });
+        body
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            div(class="container-md")
+                div(class="pendingName") Pending Requests
+                    div(class="pendingContainer")
+                        div(class="pendingHeader")
+                            table(class="pendingTable")
+                                tbody
+                                    if row === undefined
+                                         tr
+                                            td Nothing to see here!
+                                    else
+                                         each row in data
+                                             tr(class="DataRow")
+                                                 td(class="txt") !{row.FirstName} has requested !{row.StartDate} - !{row.EndDate} off for !{PTOType} Leave
+                                                     td
+                                                         button(class="deny" class=" color btn btn-danger") Deny
+                                                     td
+                                                         button(class="reqInfo" class="color btn btn-warning") Request Info
+                                                     td
+                                                         button(class="accept" class="color btn btn-success") Accept
+                                                     tr
+                                                     td(class="detailsBtn")
+                                                         button(type="button"  onclick="location.href='/details'") View Details
+                                                     tr
+                                                         td
+                                                     tr(class="line")
+                    br
+                button(type="button"  onclick="location.href='/manSchedule'" value="back" class="btn btn-secondary") Back
+
+                .modal.fade(id="myModal" tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                    .modal-dialog.modal-dialog-centered(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLongTitle.modal-title Modal title
+                            .modal-body
+                                label(id="prevCommentsLabel" class="form-label") Previous Comments
+                                    br
+                                    b(id="prevComments")
+                                form(action="/" method="POST")
+                                    label(class="form-label") Enter Additional Comments (Optional)
+                                    input(type=text class="form-control" class="form-control")
+                            .modal-footer
+                                button.btn.btn-secondary(id="ModalClose" type='button' data-dismiss='modal') Cancel
+                                button(id="submitButton" type="submit" class="btn btn-secondary" ) Submit
+

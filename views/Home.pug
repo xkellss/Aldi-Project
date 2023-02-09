@@ -1,0 +1,50 @@
+include html/Header.html
+html
+    head
+        meta(charset='UTF-8')
+        script.
+            $(document).ready(function () {
+                let error = "!{loginError}";
+                if (error) {
+                    let mymodal = $('#myModal');
+                    mymodal.find('.modal-title').text("Error");
+                    $('#myModal').modal('show');
+                }
+                $("#ModalClose").click(function () {
+                    $('#myModal').modal('hide')
+                });
+            });
+        body
+            div(class="container")
+                div(class="title") Enter your ID and Password
+                    p
+                div(class="mid")
+                    form(action='/login' method='post')
+                        label( class="form-label") ID Number
+                        input(type="text" name='username' class="form-control form-control-sm" id='username' required='')
+                        br
+                        label( class="form-label") Password
+                        input(type="password" name='password' class="form-control form-control-sm" id="password" required='')
+                        br
+                        a(href="/forgot") Forgot Password
+                        br
+                        a(href="/create") Create Account
+                        br
+                        p
+                        br
+                        div(class="homeBtn")
+                            button.btn.btn-outline-dark(type='submit' value='Login' id='login') Login
+
+                        br
+                        br
+
+            .modal.fade(id="myModal" tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                .modal-dialog.modal-dialog-centered(role='document')
+                    .modal-content
+                        .modal-header
+                            h5#exampleModalLongTitle.modal-title Modal title
+                        .modal-body
+                            | !{loginError}
+                        .modal-footer
+                            button.btn.btn-secondary(id="ModalClose" type='button' data-dismiss='modal') Ok
+                            //button.btn.btn-primary(type='button') Save changes

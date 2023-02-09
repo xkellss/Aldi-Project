@@ -1,0 +1,220 @@
+include html/Header.html
+html
+    head
+        script.
+
+
+        meta(charset='UTF-8')
+        body
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            div(class="container-md")
+                div(class="announceContainer")
+                    div(class="announceHeader") Announcements
+                        p
+                        table.table(class="announceTable")
+                            tbody
+                                tr
+                                li Starting next week, we will be working 12 hour shifts
+                    table(class="calHeader")
+                        tbody(class="menuNav")
+                            tr
+                            td(class="menuOptions")
+                                a(class="option" href="/schedule") My Schedule
+                            td(class="menuOptions")
+                                a(class="option" href="/request") Request
+                            td(class="menuOptions")
+                                a(class="option" href="/report") My Report
+                            td
+                                span December 2022
+                    div(class="calendar")
+                    span(class="menuBar")
+                    table.table(class="headColor", cellspacing="0", cellpadding="0")
+                        tbody
+                        thead
+                        tr
+                        th Sun
+                        th Mon
+                        th Tues
+                        th Wed
+                        th Thurs
+                        th Fri
+                        th Sat
+                        tbody(class="calDays")
+                            tr
+                            td
+                            td
+                            td
+                            td
+                            td
+                                a(href="")
+                                    div
+                                        div 01
+                            td
+                                a(href="")
+                                    div
+                                        div 02
+                            td
+                                a(href="")
+                                    div
+                                        div 03
+                            tr
+                            tr
+                            td
+                                a(href="")
+                                    div
+                                        div 04
+                            td
+                                a(href="")
+                                    div
+                                        div 05
+                                        div(style="font-weight: bold; background-color:rgba(0,255,0,0.3);") Sick Day
+
+                            td
+                                a(href="")
+                                    div
+                                        div 06
+                            td
+                                a(href="")
+                                    div
+                                        div 07
+                            td
+                                a(href="")
+                                    div
+                                        div 08
+                            td
+                                a(href="")
+                                    div
+                                        div 09
+                            td
+                                a(href="")
+                                    div
+                                        div 10
+                            tr
+                            td
+                                a(href="")
+                                    div
+                                        div 11
+                            td
+                                a(href="")
+                                    div
+                                        div 12
+                            td
+                                a(href="")
+                                    div
+                                        div 13
+                            td
+                                a(href="")
+                                    div
+                                        div 14
+                            td
+                                a(href="")
+                                    div
+                                        div 15
+                            td
+                                a(href="")
+                                    div
+                                        div 16
+                                            div(style="font-weight: bold; background-color:rgba(255,0,0,0.3);") Personal Day
+                            td
+                                a(href="")
+                                    div
+                                        div 17
+                            tr
+                            td
+                                a(href="")
+                                    div
+                                        div 18
+                            td
+                                a(href="")
+                                    div
+                                        div 19
+                            td
+                                a(href="")
+                                    div
+                                        div 20
+                            td
+                                a(href="")
+                                    div
+                                        div 21
+                                        div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") Vacation Day
+
+                            td
+                                a(href="")
+                                    div
+                                        div 22
+                                            div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") ‎
+                            td
+                                a(href="")
+                                    div
+                                        div 23
+                                        div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") ‎
+                            td
+                                a(href="")
+                                    div
+                                        div 24
+                                        div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") ‎
+                                        div(style="font-weight: bold; background-color:rgba(0,255,0,0.3);") Christmas Eve
+                            tr
+                            td
+                                a(href="")
+                                    div
+                                        div 25
+                                        div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") ‎
+                                        div(style="font-weight: bold; background-color:rgba(0,255,0,0.3);") Christmas Day
+                            td
+                                a(href="")
+                                    div
+                                        div 26
+                                        div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") ‎
+                            td
+                                a(href="")
+                                    div
+                                        div 27
+                                        div(style="font-weight: bold; background-color:rgba(255,255,0,0.3);") ‎
+                            td
+                                a(href="")
+                                    div
+                                        div 28
+                            td
+                                a(href="")
+                                    div
+                                        div 29
+                            td
+                                a(href="")
+                                    div
+                                        div 30
+                            td
+                                a(href="")
+                                    div
+                                        div 31
+                            table(class="calFooter")
+                                tbody
+                                    tr
+                                    td(class="calButton")
+                                        a(href="") Prev Month
+                                    td(class="calButton")
+                                        a(href="") Next Month
+                div(class="requestContainer")
+                    div(class="requestHeader") Requests
+                        p
+                    table.table(class="RequestTable")
+                        tbody
+                            th Type
+                            th Start Date
+                            th End Date
+                            th Status
+                            th Date Submitted
+
+                            if data === undefined
+                                tr
+                                    td No requests to see!
+                            else
+                                each row in data
+                                    tr
+                                        td !{row.PTOType}
+                                        td !{row.StartDate}
+                                        td !{row.EndDate}
+                                        td !{row.Status}
+                                        td !{row.DateSubmitted}
+
+

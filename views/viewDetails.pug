@@ -1,0 +1,56 @@
+include html/Header2.html
+html
+    head
+        meta(charset='UTF-8')
+        body
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            div(class="container-md")
+                div(class="announceContainer")
+                    div(class="form")
+                        div Dates
+                            form
+                            form(class="row g-3")
+                                div(class="col-md-3")
+                                    label( class="form-label") Start
+                                    div(class="formLabel") August 15th
+                                div(class="col-md-3")
+                                    label(class="form-label") End
+                                    div(class="formLabel") August 17th
+                                div(class="col-md-3")
+                                    label( class="form-label") Type
+                                    div(class="formLabel") Vacation
+                                div(class="col-md-3")
+                                    label( class="form-label") Comments
+                                    div(class="formLabel") I will be going out of state.
+
+                div(class="remainingContainer") Remaining
+                    p
+                    div(class="remainingHeader")
+                        table(class="remainingTable")
+                            tbody
+                                tr
+                                td Vacation Day
+                                td Sick Day
+                                td Personal Day
+                                tr
+                                td (VD)
+                                td (SD)
+                                td (PD)
+                                tr
+                                td 10
+                                td 6
+                                td 5
+
+                        table(class="piTable")
+                            tbody
+                                tr
+                                td(class="pie") 100
+                                td(class="pie2") 54
+                                td(class="pie3") 15
+                    p
+                    button(type="button"  onclick="location.href='/pending'" class="btn btn-secondary") Back
+
+
+                    br
+                    br
+

@@ -1,0 +1,71 @@
+include html/Header2.html
+html
+    head
+        meta(charset='UTF-8')
+        body
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            div(class="container-md")
+                div(class="reportName") Employee Report For: !{FirstName + " " + LastName}
+                    button(type="button"  onclick="location.href='/employeeList'") Back
+                    div(class="reportContainer") Vacation Days (VD)
+                        p
+                        div(class="reportHeader")
+                            table(class="reportTable")
+                                tbody
+                                    tr
+                                    td Available
+                                    td Used
+                                    td Total
+                                    td Dates
+                                    tr
+                                    tr
+                                    td !{PtoBalanceVacation}
+                                    td !{MaxVacation - PtoBalanceVacation}
+                                    td !{MaxVacation}
+                            table(class="piReport")
+                                tbody
+                                    tr
+                                    td(class="pie") 100
+                    div(class="reportContainer") Sick Days (SD)
+                        p
+                        div(class="reportHeader")
+                            table(class="reportTable")
+                                tbody
+                                    tr
+                                    td Available
+                                    td Used
+                                    td Total
+                                    td Dates
+                                    tr
+                                    tr
+                                    td !{PtoBalanceSick}
+                                    td !{MaxSick - PtoBalanceSick}
+                                    td !{MaxSick}
+                                    td June 24, 2022
+                            table(class="piReport")
+                                tbody
+                                    tr
+                                    td(class="pie") 100
+                        div(class="reportContainer") Personal Days (PD)
+                            p
+                            div(class="reportHeader")
+                                table(class="reportTable")
+                                    tbody
+                                        tr
+                                        td Available
+                                        td Used
+                                        td Total
+                                        td Dates
+                                        tr
+                                        tr
+                                        td !{PtoBalancePersonal}
+                                        td !{MaxPersonal - PtoBalancePersonal}
+                                        td !{MaxPersonal}
+                                        td October 3, 2022
+                                            div November 4, 2022
+                                table(class="piReport")
+                                    tbody
+                                        tr
+                                        td(class="pie") 100
+                    br
+

@@ -1,0 +1,389 @@
+/*HEADER HTML*/
+.navbar {
+    background-color: #0f0f55;
+}
+
+.header {
+    color: white;
+    font-size: 50px;
+    font-weight: lighter;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+}
+/*HOME PUG... LOG IN SCREEN*/
+.container{
+    border-radius: 5px;
+    box-shadow:0 4px 10px 6px rgba(0, 0, 0, 0.2) ;
+    background-color: rgba(255,255,255,0.1);
+
+    margin-top: 100px;
+    width: 20%;
+    height:auto;
+    margin-bottom: 100px;
+    align-content: center;
+}
+
+body{
+    background-image: linear-gradient(white, lightgray);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.title{
+    text-align: center;
+}
+p{
+    text-align: center;
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+    margin-top: 5px;
+}
+.homeBtn{
+    text-align: center;
+}
+label{
+    color: rgba(80,80,80,0.3);
+}
+.mid label{
+    margin-top: 3px;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+/*SCHEDULE */
+
+.menuOptions > a:hover {
+    color: blue;
+}
+.scrollable {
+    overflow:scroll;
+    height:100px;
+}
+.container-md{
+    align-content: center;
+    box-shadow:0 4px 10px 6px rgba(0, 0, 0, 0.2) ;
+    background-color: rgba(255,255,255,0.1);
+    margin-top: 100px;
+    width: 50%;
+    height:auto;
+    margin-bottom: 100px;
+
+}
+.menuBar{
+    background-color: rgb(65,105,185);
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    border: 12px solid rgb(65,105,185);
+    margin-bottom: -6px;
+}
+.calHeader{
+    width: 100%;
+    margin-bottom: -1px;
+}
+.option
+{
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.menuOptions {
+    border-radius: 6px 6px 0px 0px;
+    float: left;
+    background-color: rgba(65,105,185,0.5);
+    width: auto;
+    margin-top: 17px;
+    margin-right: 1px;
+}
+.calHeader td span{
+    border-radius: 6px 6px 0px 0px;
+    float: right;
+    background-color: rgba(65,105,185,0.5);
+    width: auto;
+    font-weight: lighter;
+    margin-top: 17px;
+}
+.calFooter {
+    text-align: center;
+    background-color: silver;
+    width: 100%;
+    font-weight: lighter;
+}
+.calButton a{
+    font-size: 15px;
+    background-color: rgba(255,255,255,.8);
+    padding: 5px;
+    justify-content: space-between;
+}
+.calFooter td{
+    font-size: 25px;
+    text-align: center;
+}
+.calHeader td{
+    font-size: 25px;
+    text-align: right;
+}
+.calTitle{
+    text-align: right;
+}
+.calDays td{
+    height: 70px;
+    padding: 0px;
+    margin: 0px;
+}
+.calDays div{
+    font-size: 10px;
+
+}
+.headColor{
+    table-layout: fixed;
+}
+.headColor th{
+    background: rgba(252,180,114,0.6);
+    color: white;
+}
+.requestContainer{
+    /*padding-top: 90px;*/
+    font-weight: lighter;
+}
+
+.requestHeader{
+    text-align: left;
+    font-size: 30px;
+}
+
+.announceContainer{
+    padding-top: 10px;
+    font-weight: lighter;
+    padding-bottom: 20px;
+}
+
+.announceHeader{
+    text-align: left;
+    font-size: 30px;
+}
+.announceHeader li{
+    font-size: 20px
+}
+/*REQUEST PTO PAGE*/
+
+.form{
+    width: 100%;
+    font-size: 15px;
+}
+.remainingContainer{
+    font-size: 30px;
+    font-weight: lighter;
+}
+.remainingHeader{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+.remainingTable{
+    text-align: center;
+    width: 45%;
+    font-size: 15px;
+
+}
+.remainingTable td{
+    vertical-align: top;
+    padding: 0px;
+}
+
+.piTable{
+    width: 40%;
+
+}
+.pie {
+    --w:80px;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
+    margin: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.pie:before {
+    --p:100;--b:4px;--c:green;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.pie2 {
+    --w:80px;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
+    margin: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.pie2:before {
+    --p:54;--b:4px;--c:yellow;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.pie3 {
+    --w:80px;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
+    margin: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.pie3:before {
+    --p:15;--b:4px;--c:red;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.col-5 button{
+    margin-left: 5px;
+}
+/*REPORT PAGE*/
+.container-md button{
+    margin-bottom: 20px;
+}
+.reportContainer{
+    font-size: 25px;
+    font-weight: lighter;
+    height: auto;
+}
+
+.reportHeader{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+.reportTable{
+    text-align: center;
+    width: 71%;
+    font-size: 15px;
+    table-layout: fixed;
+
+}
+
+.reportTable td{
+    vertical-align: top;
+    padding: 0px;
+}
+.piReport{
+    width: 20%;
+}
+
+/*MANAGER EMPLOYEELIST*/
+.empListContainer{
+    font-size: 30px;
+    font-weight: lighter;
+    overflow: scroll;
+}
+
+.empListHeader{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+.empListTable{
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+}
+
+.empListTable td{
+    padding-bottom: .5em;
+}
+thead{
+    text-decoration: underline;
+}
+/*EMPLOYEE SEEREPORT BUTTON*/
+.reportName{
+    font-weight: lighter;
+    font-size: 30px;
+}
+.reportName button{
+    font-size: 20px;
+    /*margin-left: 250px;*/
+    /*float: right;*/
+    margin-top: 8px;
+    float: right;
+}
+/*PENDING REQUEST*/
+.pendingContainer{
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.pendingHeader{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+
+.pendingTable{
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+}
+.txt{
+    width: 20%
+}
+.pendingTable td{
+    padding-bottom: .5em;
+}
+
+.pendingName{
+    font-weight: lighter;
+    font-size: 30px;
+}
+.color{
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 3px 25px;
+}
+.line{
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+}
+/*VIEW DETAILS*/
+.back{
+    float: right;
+}
+.formLabel{
+    padding: 7px;
+    background: white;
+}
+/*MANAGER SCHEDULE VIEW*/
+td.sick{
+    background-color: rgba(235,0,0,0.6);
+}
+td.personal{
+    background-color: rgba(0,150,0,0.6);
+}
+td.vacation{
+    background-color: rgba(0,0,255,0.7);
+}

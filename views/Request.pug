@@ -1,0 +1,105 @@
+include html/Header.html
+html
+    head
+        meta(charset='UTF-8')
+        script.
+            $(document).ready(function () {
+                let dateRangeElement = $('input[name="daterange"]');
+                dateRangeElement.daterangepicker({
+                    autoUpdateInput: false,
+                    locale: {
+                        cancelLabel: 'Clear'
+                    }
+                });
+
+                dateRangeElement.on('apply.daterangepicker', function (ev, picker) {
+                    $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+                });
+
+                // dateRangeElement.on('cancel.daterangepicker', function (ev, picker) {
+                //     $(this).val('');
+                // });
+
+                // $("#submitButton").click(function () {
+                //     //let startDate = $('#startDate').val().split('-');
+                //     //let endDate = $('#endDate').val().split('-');
+                //     //console.log(startDate[0]);
+                //     //console.log(endDate);
+                //     //let date1 = Date()
+                //
+                //
+                //     $('#myModal').modal('show')
+                // });
+                // $("#ModalClose").click(function () {
+                //     $('#myModal').modal('hide')
+                // });
+            });
+        body
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            div(class="container-md")
+                div(class="announceContainer")
+                    div(class="announceHeader") PTO Request: !{FirstName + " " + LastName}
+                        p
+                    div(class="form")
+                        div Dates
+                            form(class="row g-3" action="/postreq" method="POST")
+                                div(class="col-md-3")
+                                    label(for="startDate" class="form-label") Choose Date
+                                    input(type="date" name="startDate" id="startDate" data-date-format="mm/dd/yyyy")
+                                    //input( type="text" name="daterange" value="2022/01/01 - 2022/01/15")
+                                div(class="col-md-3")
+                                    label(for="endDate" class="form-label") End Date
+                                    br
+                                    input(type="date" name="endDate" id="endDate" data-date-format="mm/dd/yyyy")
+                                div(class="col-md-3")
+                                    label(class="form-label") Type
+                                    select(name="inputType" class="form-select" required="")
+                                        option(selected) Vacation Day
+                                        option Personal Day
+                                        option Sick Day
+                                div(class="col-md-3")
+                                    label(class="form-label") Comments
+                                    textarea(class="form-control" name="inputComments")
+                                div(class="col-5")
+                                    button(id="submitButton" type="submit" class="btn btn-secondary" ) Submit
+
+                                    button(type="button"  onclick="location.href='/schedule'" value="back" class="btn btn-secondary") Back
+
+                div(class="remainingContainer") Remaining
+                    p
+                    div(class="remainingHeader")
+                        table(class="remainingTable")
+                            tbody
+                                tr
+                                td Vacation Day
+                                td Sick Day
+                                td Personal Day
+                                tr
+                                td (VD)
+                                td (SD)
+                                td (PD)
+                                tr
+                                td !{PtoBalanceVacation}
+                                td !{PtoBalancePersonal}
+                                td !{PtoBalanceSick}
+
+                        table(class="piTable")
+                            tbody
+                                tr
+                                td(class="pie") !{(PtoBalanceVacation / MaxVacation).toFixed(2) * 100}
+                                td(class="pie2") !{(PtoBalancePersonal / MaxPersonal).toFixed(2) * 100}
+                                td(class="pie3") !{(PtoBalanceSick / MaxSick).toFixed(2) * 100}
+                    p
+                    br
+
+                .modal.fade(id="myModal" tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+                    .modal-dialog.modal-dialog-centered(role='document')
+                        .modal-content
+                            .modal-header
+                                h5#exampleModalLongTitle.modal-title Modal title
+                            .modal-body
+                                |
+                            .modal-footer
+                                button.btn.btn-secondary(id="ModalClose" type='button' data-dismiss='modal') Ok
+                                //button.btn.btn-primary(type='button') Save changes
+                                //https://www.daterangepicker.com/

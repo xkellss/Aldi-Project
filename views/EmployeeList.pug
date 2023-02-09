@@ -1,0 +1,37 @@
+include html/Header2.html
+html
+    head
+        meta(charset='UTF-8')
+        body
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            div(class="container-md")
+                div(class="announceContainer")
+                    div(class="empListContainer") List of your Employees
+                    p
+                    div(class="empListHeader")
+                        table(class="empListTable" id="empListTable")
+                            tbody
+                                thead
+                                    tr
+                                    th ID
+                                    th Name
+                                    th Email
+                                    th Hire Date
+
+                                if row === undefined
+                                    tr
+                                        td Nothing to see here!
+                                else
+                                    for row in data
+                                        tr
+                                            td !{row.EmployeeId}
+                                            td !{row.FirstName} !{row.LastName}
+                                            td !{row.Email}
+                                            td !{row.HireDate}
+                                            td
+                                                button(type="button"  onclick="location.href='/seeReport'") See Report
+
+                    br
+                    button(type="button"  onclick="location.href='/manSchedule'" value="back" class="btn btn-secondary") Back
+
+
