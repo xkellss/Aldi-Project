@@ -44,32 +44,28 @@ html
                 });
             });
         body
-            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 1400px' href='/home')  Logout
+            a(style='color: white; text-decoration: none; position: relative; top: -30px; left: 90%' href='/home')  Logout
             div(class="container-md")
                 div(class="pendingName") Pending Requests
                     div(class="pendingContainer")
                         div(class="pendingHeader")
                             table(class="pendingTable")
                                 tbody
-                                    if row === undefined
-                                         tr
-                                            td Nothing to see here!
-                                    else
-                                         each row in data
-                                             tr(class="DataRow")
-                                                 td(class="txt") !{row.FirstName} has requested !{row.StartDate} - !{row.EndDate} off for !{PTOType} Leave
-                                                     td
-                                                         button(class="deny" class=" color btn btn-danger") Deny
-                                                     td
-                                                         button(class="reqInfo" class="color btn btn-warning") Request Info
-                                                     td
-                                                         button(class="accept" class="color btn btn-success") Accept
-                                                     tr
-                                                     td(class="detailsBtn")
-                                                         button(type="button"  onclick="location.href='/details'") View Details
-                                                     tr
-                                                         td
-                                                     tr(class="line")
+                                    each row in data
+                                        tr(class="DataRow")
+                                            td(class="txt") !{row.FirstName} has requested !{row.StartDate} - !{row.EndDate} off for !{PTOType} Leave
+                                                td
+                                                    button(class="deny" class=" color btn btn-danger") Deny
+                                                td
+                                                    button(class="reqInfo" class="color btn btn-warning") Request Info
+                                                td
+                                                    button(class="accept" class="color btn btn-success") Accept
+                                                tr
+                                                td(class="detailsBtn")
+                                                    button(type="button"  onclick="location.href='/details'") View Details
+                                                tr
+                                                    td
+                                                tr(class="line")
                     br
                 button(type="button"  onclick="location.href='/manSchedule'" value="back" class="btn btn-secondary") Back
 
